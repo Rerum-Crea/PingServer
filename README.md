@@ -8,11 +8,17 @@ PingServer is a python package that makes things more convenient to set up a ser
 First import the package with:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`pip install PingServer`
-Then import it with:
+
+Then import it with: 
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`import PingServer`
+
 Then add this one line to start the server:
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`PingServer.start_server()`
+
 The `start_server()` command has an optional parameter for a message on the web page to be pinged.
+
 It's just that simple enjoy.
 
 ## Background
