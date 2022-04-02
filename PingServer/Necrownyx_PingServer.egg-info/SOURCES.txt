@@ -1,8 +1,0 @@
-LICENSE
-README.md
-pyproject.toml
-setup.py
-PingServer/Necrownyx_PingServer.egg-info/PKG-INFO
-PingServer/Necrownyx_PingServer.egg-info/SOURCES.txt
-PingServer/Necrownyx_PingServer.egg-info/dependency_links.txt
-PingServer/Necrownyx_PingServer.egg-info/top_level.txt

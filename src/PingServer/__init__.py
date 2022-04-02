@@ -1,7 +1,6 @@
-from flask import Flask
-from flask import Flask, render_template
-
 def start_server(**message):
+  from flask import Flask
+  from flask import Flask, render_template
   if message == {}:
     message = ":)"
   app = Flask('app')
