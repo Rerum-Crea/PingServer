@@ -1,15 +1,18 @@
-def start_server(**message):
+def start(message=":)"):
   from flask import Flask
   from flask import Flask, render_template, redirect
-  if message == {}:
-    message = ":)"
+  import random
+
   app = Flask('app')
   @app.route('/')
-  def Start():
+  def server():
     return message
-  app.run(host='0.0.0.0', port=6969)
 
-def thread():
+  app.run(host='0.0.0.0', port=random.randint(2000, 9000))
+
+def thread(message=":)"):
     from threading import Thread
-    thread_data = Thread(target=start_server)
+
+    thread_data = Thread(target=start, args=(message,))
+
     return thread_data
