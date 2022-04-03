@@ -5,10 +5,10 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="PingServer",
-    version="0.0.12",
+    version="0.0.13",
     author="Isaac",
     author_email="no_reply@example.com",
-    description="Makes creating a ping server easier",
+    description="Makes creating a server to be pinged easier",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/Necrownyx/PingServer",
