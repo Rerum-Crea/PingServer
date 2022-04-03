@@ -15,17 +15,21 @@ Then import it with:
 
 Then add this one line to start the server:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`PingServer.start_server()`
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`PingServer.start()`
 
-The `start_server()` command has an optional parameter for a message on the web page to be pinged.
-It's just that simple enjoy.
+The `start()` command has an optional parameter for a message on the web page to be pinged.
 
 ## How to run on a thread.
 If you want to run the server on its own thread you can put this in your code:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`PingServer.thread().start()`
 
-and this should just work if you have any problems with it leave a issue on the GitHub page.
+This module of the package can also take a custom message for example:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`PingServer.thread("hello, world!").start()`
+
+Will output "hello, world!" on the webpage.
 
 ## Background
+
 This is the first python package I have ever made and is somewhat of a tutorial for myself with something I will be able to use for things like discord bots on replit.com and more.
