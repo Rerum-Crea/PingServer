@@ -90,8 +90,10 @@ def initialize(amt=10, done=False):
         route_message = {}
         for i in range(10):
             route_message[i] = {}
-            route_message[i]["route"] = '/'
-            route_message[i]["message"] = ':)'
+            route_message[i]["route"] = '/Pingserver_initialize_page_default'
+            route_message[i]["message"] = "No text channels You find yourself in a strange place. You don't have " \
+                                          "access to any text channels, or there are none on this server. There is " \
+                                          "nothing there, Everyone still have the server but cant just see it. "
         done = True
         return True
     else:
