@@ -95,8 +95,14 @@ def initialize(amt=10, done=False):
         done = True
         return True
     else:
-        pagenum -= 1
-        return True
+        try:
+            pagenum -= 1
+            return True
+        except NameError:
+            print(f"{bcolors.FAIL}##############################################")
+            print(f"{bcolors.FAIL}You need to run PingServer.initialize() first.")
+            print(f"{bcolors.FAIL}##############################################")
+            return False
 
 
 def create_page(route='/', message=":)"):
