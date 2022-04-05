@@ -1,4 +1,6 @@
-# PingServer [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FNecrownyx%2FPingServer&count_bg=%2300AEFF&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Current+Views&edge_flat=true)](https://hits.seeyoufarm.com)
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FNecrownyx%2FPingServer&count_bg=%2300AEFF&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Current+Views&edge_flat=true)](https://hits.seeyoufarm.com)
+
+# PingServer
 
 PingServer is a python package that makes things more convenient to set up a server to be pinged by uptimerobot.com this package is most useful on sites like replit.com where your program might shut down after being idle for too long
 
