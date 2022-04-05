@@ -101,8 +101,8 @@ def create_page(route='/', message=":)"):
 def create_page_html(route='/', htmlpath=":)"):
     initialize_internals(0, True, True)
     if htmlpagenum >= 0:
-        route_message_html[pagenum]["route"] = route
-        route_message_html[pagenum]["html-path"] = htmlpath
+        route_message_html[htmlpagenum]["route"] = route
+        route_message_html[htmlpagenum]["html-path"] = htmlpath
     else:
         print(f"{bcolors.WARNING}No HTML Pages Left to use :(")
 
