@@ -31,107 +31,24 @@ def thread(message=":)"):
 
 def launch_pages():
     from threading import Thread
-    thread_data = Thread(target=launch_pages_internals)
+    from .launch_pages_internal import launch_pages_internals
+    thread_data = Thread(target=launch_pages_internals, args=(route_message_html, route_message, pageamt, htmlpageamt))
     return thread_data
 
-
-def launch_pages_internals():
-    from flask import Flask, render_template
-    import random
-
-    app = Flask('app')
-    if pagenum >= 1:
-        @app.route(route_message_html[0]["route"])
-        def Server_0():
-            return render_template(route_message_html[0]["html-path"])
-
-        @app.route(route_message_html[1]["route"])
-        def Server_1():
-            return render_template(route_message_html[1]["html-path"])
-
-        @app.route(route_message_html[2]["route"])
-        def Server_2():
-            return render_template(route_message_html[2]["html-path"])
-
-        @app.route(route_message_html[3]["route"])
-        def Server_3():
-            return render_template(route_message_html[3]["html-path"])
-
-        @app.route(route_message_html[4]["route"])
-        def Server_4():
-            return render_template(route_message_html[4]["html-path"])
-    if pagenum >= 5:
-        @app.route(route_message_html[5]["route"])
-        def Server_5():
-            return render_template(route_message_html[5]["html-path"])
-
-        @app.route(route_message_html[6]["route"])
-        def Server_6():
-            return render_template(route_message_html[6]["html-path"])
-
-        @app.route(route_message_html[7]["route"])
-        def Server_7():
-            return render_template(route_message_html[7]["html-path"])
-
-        @app.route(route_message_html[8]["route"])
-        def Server_8():
-            return render_template(route_message_html[8]["html-path"])
-
-        @app.route(route_message_html[9]["route"])
-        def Server_9():
-            return render_template(route_message_html[9]["html-path"])
-    if pagenum >= 1:
-        @app.route(route_message[0]["route"])
-        def Server_10():
-            return route_message[0]["message"]
-
-        @app.route(route_message[1]["route"])
-        def Server_11():
-            return route_message[1]["message"]
-
-        @app.route(route_message[2]["route"])
-        def Server_12():
-            return route_message[2]["message"]
-
-        @app.route(route_message[3]["route"])
-        def Server_13():
-            return route_message[3]["message"]
-
-        @app.route(route_message[4]["route"])
-        def Server_14():
-            return route_message[4]["message"]
-    if pagenum >= 5:
-        @app.route(route_message[5]["route"])
-        def Server_15():
-            return route_message[5]["message"]
-
-        @app.route(route_message[6]["route"])
-        def Server_16():
-            return route_message[6]["message"]
-
-        @app.route(route_message[7]["route"])
-        def Server_17():
-            return route_message[7]["message"]
-
-        @app.route(route_message[8]["route"])
-        def Server_18():
-            return route_message[8]["message"]
-
-        @app.route(route_message[9]["route"])
-        def Server_19():
-            return route_message[9]["message"]
-
-    app.run(host='0.0.0.0', port=random.randint(2000, 9000))
 
 def initialize_internals(amt=10, done=False, html=False):
     if not done:
         global route_message_html
         global route_message
         global pagenum
-        if html == False:
-            pagenum = 10
+        global htmlpagenum
+        global pageamt
+        global htmlpageamt
+        if not html:
+            pagenum = amt
+            pageamt = amt
             route_message = {}
-            for i in range(10):
+            for i in range(amt):
                 route_message[i] = {}
                 route_message[i]["route"] = '/Pingserver_initialize_page_default'
                 route_message[i]["message"] = "No text channels You find yourself in a strange place. You don't have " \
@@ -140,26 +57,31 @@ def initialize_internals(amt=10, done=False, html=False):
             done = True
             return True
         else:
-            pagenum = 10
+            htmlpagenum = amt
+            htmlpageamt = amt
             route_message_html = {}
-            for i in range(10):
+            for i in range(amt):
                 route_message_html[i] = {}
                 route_message_html[i]["route"] = '/Pingserver_initialize_page_default'
                 route_message_html[i]["html-path"] = "No text channels You find yourself in a strange place. You don't " \
-                                                    "have access to any text channels, or there are none on this " \
-                                                    "server. There is nothing there, Everyone still have the server " \
-                                                    "but cant just see it. "
+                                                     "have access to any text channels, or there are none on this " \
+                                                     "server. There is nothing there, Everyone still have the server " \
+                                                     "but cant just see it. "
             done = True
             return True
     else:
         try:
-            pagenum -= 1
-            return True
+            if not html:
+                pagenum -= 1
+                return True
+            else:
+                htmlpagenum -= 1
+                return False
         except NameError:
             print(f"{bcolors.FAIL}##############################################")
             print(f"{bcolors.FAIL}You need to run PingServer.initialize() first.")
             print(f"{bcolors.FAIL}##############################################")
-            return False
+            return "Run PingServer.initialize()"
 
 
 def initialize(amt=10):
@@ -168,7 +90,7 @@ def initialize(amt=10):
 
 
 def create_page(route='/', message=":)"):
-    initialize_internals(0, True)
+    initialize_internals(0, True, False)
     if pagenum >= 0:
         route_message[pagenum]["route"] = route
         route_message[pagenum]["message"] = message
@@ -177,12 +99,12 @@ def create_page(route='/', message=":)"):
 
 
 def create_page_html(route='/', htmlpath=":)"):
-    initialize_internals(0, True)
-    if pagenum >= 0:
+    initialize_internals(0, True, True)
+    if htmlpagenum >= 0:
         route_message_html[pagenum]["route"] = route
         route_message_html[pagenum]["html-path"] = htmlpath
     else:
-        print(f"{bcolors.WARNING}No Pages Left to use :(")
+        print(f"{bcolors.WARNING}No HTML Pages Left to use :(")
 
 
 class help:
