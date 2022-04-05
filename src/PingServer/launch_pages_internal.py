@@ -14,33 +14,67 @@ def launch_pages_internals(route_message_html, route_message, pageamt, htmlpagea
     if htmlpageamt > 10:
         if htmlpageamt <= 20:
             html_10(app, route_message_html)
+            html_20(app, route_message_html)
     if pageamt > 10:
         if pageamt <= 20:
             string_10(app, route_message)
+            string_20(app, route_message)
 
     # 30
     if htmlpageamt > 20:
         if htmlpageamt <= 30:
             html_10(app, route_message_html)
+            html_20(app, route_message_html)
+            html_30(app, route_message_html)
     if pageamt > 20:
         if pageamt <= 30:
             string_10(app, route_message)
+            string_20(app, route_message)
+            string_30(app, route_message)
 
     # 40
     if htmlpageamt > 30:
         if htmlpageamt <= 40:
             html_10(app, route_message_html)
+            html_20(app, route_message_html)
+            html_30(app, route_message_html)
+            html_40(app, route_message_html)
     if pageamt > 30:
         if pageamt <= 40:
             string_10(app, route_message)
+            string_20(app, route_message)
+            string_30(app, route_message)
+            string_40(app, route_message)
 
     # 50
     if htmlpageamt > 40:
         if htmlpageamt <= 50:
             html_10(app, route_message_html)
+            html_20(app, route_message_html)
+            html_30(app, route_message_html)
+            html_40(app, route_message_html)
+            html_50(app, route_message_html)
     if pageamt > 40:
         if pageamt <= 50:
             string_10(app, route_message)
+            string_20(app, route_message)
+            string_30(app, route_message)
+            string_40(app, route_message)
+            string_50(app, route_message)
+
+    # >50
+    if htmlpageamt >= 51:
+        html_10(app, route_message_html)
+        html_20(app, route_message_html)
+        html_30(app, route_message_html)
+        html_40(app, route_message_html)
+        html_50(app, route_message_html)
+    if pageamt >= 51:
+        string_10(app, route_message)
+        string_20(app, route_message)
+        string_30(app, route_message)
+        string_40(app, route_message)
+        string_50(app, route_message)
 
     app.run(host='0.0.0.0', port=random.randint(2000, 9000))
 
