@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="PingServer",
-    version="0.0.19",
+    version="0.0.20",
     author="Isaac",
     author_email="no_reply@example.com",
     description="Makes creating a server to be pinged easier",

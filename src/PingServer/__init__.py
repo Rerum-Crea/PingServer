@@ -177,7 +177,7 @@ def create_page(route='/', message=":)"):
 
 
 def create_page_html(route='/', htmlpath=":)"):
-    initialize(0, True)
+    initialize_internals(0, True)
     if pagenum >= 0:
         route_message_html[pagenum]["route"] = route
         route_message_html[pagenum]["html-path"] = htmlpath
@@ -191,4 +191,3 @@ class help:
         print(f"{bcolors.OKCYAN}To get info on the different modules please goto:")
         print(f"{bcolors.OKCYAN}https://github.com/Necrownyx/PingServer/blob/main/README.md")
         print(f"{bcolors.OKCYAN}###########################################################")
-
