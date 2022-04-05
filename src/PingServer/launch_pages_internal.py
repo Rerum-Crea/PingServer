@@ -1,3 +1,104 @@
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+
+def create_page(route='/', horm=':)'):
+    if ".html" in horm:
+        initialize_internals(0, True, True)
+        if htmlpagenum >= 0:
+            route_message_html[htmlpagenum]["route"] = route
+            route_message_html[htmlpagenum]["html-path"] = horm
+        else:
+            print(f"{bcolors.WARNING}No HTML Pages Left to use :(")
+    else:
+        initialize_internals(0, True, False)
+        if pagenum >= 0:
+            route_message[pagenum]["route"] = route
+            route_message[pagenum]["message"] = horm
+        else:
+            print(f"{bcolors.WARNING}No Pages Left to use :(")
+
+
+def launch_pages(daemon=False):
+    from threading import Thread
+    thread_data = Thread(target=launch_pages_internals, args=(route_message_html, route_message, pageamt, htmlpageamt), daemon=daemon)
+    return thread_data
+
+
+def initialize(amt=10, htmltype=True, stringtype=True, divide=False):
+    if htmltype:
+        if not stringtype:
+            initialize_internals(amt, False, html=True)
+        else:
+            if not divide:
+                initialize_internals(amt, False, html=False)
+                initialize_internals(amt, False, html=True)
+            else:
+                initialize_internals(round(amt / 2), False, html=False)
+                initialize_internals(round(amt / 2), False, html=True)
+    elif stringtype:
+        initialize_internals(amt, False, html=False)
+    else:
+        return 'You need to have at least one of the options true.'
+
+
+def initialize_internals(amt=10, done=False, html=False):
+    from .__init__ import bcolors
+    if not done:
+        global route_message_html
+        global route_message
+        global pagenum
+        global htmlpagenum
+        global pageamt
+        global htmlpageamt
+        if not html:
+            pagenum = amt
+            pageamt = amt
+            route_message = {}
+            for i in range(amt):
+                route_message[i] = {}
+                route_message[i]["route"] = '/Pingserver_initialize_page_default'
+                route_message[i]["message"] = "No text channels You find yourself in a strange place. You don't have " \
+                                              "access to any text channels, or there are none on this server. There " \
+                                              "is nothing there, Everyone still have the server but cant just see it. "
+            done = True
+            return True
+        else:
+            htmlpagenum = amt
+            htmlpageamt = amt
+            route_message_html = {}
+            for i in range(amt):
+                route_message_html[i] = {}
+                route_message_html[i]["route"] = '/Pingserver_initialize_page_default'
+                route_message_html[i]["html-path"] = "No text channels You find yourself in a strange place. You don't " \
+                                                     "have access to any text channels, or there are none on this " \
+                                                     "server. There is nothing there, Everyone still have the server " \
+                                                     "but cant just see it. "
+            done = True
+            return True
+    else:
+        try:
+            if not html:
+                pagenum -= 1
+                return True
+            else:
+                htmlpagenum -= 1
+                return False
+        except NameError:
+            print(f"{bcolors.FAIL}##############################################")
+            print(f"{bcolors.FAIL}You need to run PingServer.initialize() first.")
+            print(f"{bcolors.FAIL}##############################################")
+            return "Run PingServer.initialize()"
+
+
 def launch_pages_internals(route_message_html, route_message, pageamt, htmlpageamt):
     from flask import Flask
     import random
