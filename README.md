@@ -30,6 +30,37 @@ This module of the package can also take a custom message for example:
 
 Will output "hello, world!" on the webpage.
 
-## Background
+## How to serve multiple pages.
+If you want to serve multiple different pages first run:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`PingServer.initialize(amt)` 
+
+with `amt` being the number of web pages to be created. 
+
+Then to create the page use either:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`PingServer.create_page(route, message)`
+
+with `route` being the route of the site for example: `'/'`  and `message` being the message to be served to users.
+
+Or to serve a html file to the user you can use:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`PingServer.create_page_html(route, htmlpath)`
+
+with `route` being the route of the site for example: `'/'`  and `htmlpath` being the name of the HTML file in the templates directory of your project.
+
+Then when you have defined all of the pages for your site run:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`PingServer.launch_pages().start()`
+
+To run all the sites on a thread or:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`PingServer.launch_pages_internals()`
+
+To run the sites on the main thread.
+
+
+
+## Background.
 
 This is the first python package I have ever made and is somewhat of a tutorial for myself with something I will be able to use for things like discord bots on replit.com and more.
