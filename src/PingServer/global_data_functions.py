@@ -53,14 +53,14 @@ def create_page(route='/', horm=':)'):
 
 
 def launch_pages(port=6969, daemon=False):
-    from threading import Thread
-    from launch_pages import launch_pages_internals
-    thread_data = Thread(target=launch_pages_internals, args=(port, route_message_html, route_message, pagenum, htmlpagenum), daemon=daemon)
+    import threading
+    from .launch_pages_internals import launch_pages_internals
+    thread_data = threading.Thread(target=launch_pages_internals, args=(port, route_message_html, route_message, pagenum, htmlpagenum), daemon=daemon)
     return thread_data
 
 
 def launch_pages_nothread(port=6969):
-    from .launch_pages import launch_pages_internals
+    from .launch_pages_internals import launch_pages_internals
     launch_pages_internals(port, route_message_html, route_message, pagenum, htmlpagenum)
 
 

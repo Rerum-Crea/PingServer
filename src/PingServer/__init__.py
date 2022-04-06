@@ -1,5 +1,5 @@
 from .global_data_functions import bcolors, create_page, launch_pages, launch_pages_nothread
-
+from .launch_pages_internals import launch_pages_internals
 
 def start(route="/", horm=':)', port=6969, amount=1):
     import random

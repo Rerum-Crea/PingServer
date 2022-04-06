@@ -12,13 +12,8 @@ import PingServer
 
 # Sets up a page that serves an HTML file on the '/' branch.
 PingServer.create_page('/', "index.html")
-PingServer.create_page('/', "index.html")
-PingServer.create_page('/', "index.html")
-PingServer.create_page('/', "index.html")
-PingServer.create_page('/', "index.html")
-PingServer.create_page('/', "index.html")
 
-PingServer.launch_pages_nothread()
+PingServer.launch_pages().start()
 
 
 
