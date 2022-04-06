@@ -1,7 +1,7 @@
 from .launch_pages_internal import bcolors, create_page, launch_pages, launch_pages_nothread
 
 
-def start(route="/", horm=':)', port=6969, amount=1):
+def start(route="/", horm=':)', port=6969):
     import random
     if port == 6969:
         port = random.randint(2000, 9000)
@@ -9,9 +9,9 @@ def start(route="/", horm=':)', port=6969, amount=1):
     launch_pages_nothread(port)
 
 
-def thread(message=":)", route='/', daemon=False):
+def thread(message=":)", route='/', port=6969, daemon=False):
     from threading import Thread
-    thread_data = Thread(target=start, args=(message, route), daemon=daemon)
+    thread_data = Thread(target=start, args=(route, message, port), daemon=daemon)
     return thread_data
 
 
