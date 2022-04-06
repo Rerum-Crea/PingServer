@@ -16,24 +16,40 @@ def create_page(route='/', horm=':)'):
     try:
         if not done:
             initialize(True)
+        htmlpagenum = initialize(True)
+        pagenum = initialize(False)
+        if ".html" in horm:
+            if htmlpagenum <= 50:
+                route_message_html[htmlpagenum]["route"] = route
+                route_message_html[htmlpagenum]["html-path"] = horm
+                htmlpagenum += 1
+            else:
+                print(f"{bcolors.WARNING}No HTML Pages Left to use :(")
+        else:
+            if pagenum <= 50:
+                route_message[pagenum]["route"] = route
+                route_message[pagenum]["message"] = horm
+                pagenum += 1
+            else:
+                print(f"{bcolors.WARNING}No Pages Left to use :(")
     except NameError:
         initialize(True)
-    htmlpagenum = initialize(True)
-    pagenum = initialize(False)
-    if ".html" in horm:
-        if htmlpagenum <= 50:
-            route_message_html[htmlpagenum]["route"] = route
-            route_message_html[htmlpagenum]["html-path"] = horm
-            htmlpagenum += 1
+        htmlpagenum = initialize(True)
+        pagenum = initialize(False)
+        if ".html" in horm:
+            if htmlpagenum <= 50:
+                route_message_html[htmlpagenum]["route"] = route
+                route_message_html[htmlpagenum]["html-path"] = horm
+                htmlpagenum += 1
+            else:
+                print(f"{bcolors.WARNING}No HTML Pages Left to use :(")
         else:
-            print(f"{bcolors.WARNING}No HTML Pages Left to use :(")
-    else:
-        if pagenum <= 50:
-            route_message[pagenum]["route"] = route
-            route_message[pagenum]["message"] = horm
-            pagenum += 1
-        else:
-            print(f"{bcolors.WARNING}No Pages Left to use :(")
+            if pagenum <= 50:
+                route_message[pagenum]["route"] = route
+                route_message[pagenum]["message"] = horm
+                pagenum += 1
+            else:
+                print(f"{bcolors.WARNING}No Pages Left to use :(")
 
 
 def launch_pages(port=6969, daemon=False):
@@ -92,29 +108,35 @@ def launch_pages_internals(port, route_message_html, route_message, pageamt, htm
     # 10
     if htmlpageamt > 1:
         if htmlpageamt <= 10:
+            html_1(app, route_message_html)
             html_10(app, route_message_html)
     if pageamt > 1:
         if pageamt <= 10:
+            string_1(app, route_message)
             string_10(app, route_message)
 
     # 20
     if htmlpageamt > 10:
         if htmlpageamt <= 20:
+            html_1(app, route_message_html)
             html_10(app, route_message_html)
             html_20(app, route_message_html)
     if pageamt > 10:
         if pageamt <= 20:
+            string_1(app, route_message)
             string_10(app, route_message)
             string_20(app, route_message)
 
     # 30
     if htmlpageamt > 20:
         if htmlpageamt <= 30:
+            html_1(app, route_message_html)
             html_10(app, route_message_html)
             html_20(app, route_message_html)
             html_30(app, route_message_html)
     if pageamt > 20:
         if pageamt <= 30:
+            string_1(app, route_message)
             string_10(app, route_message)
             string_20(app, route_message)
             string_30(app, route_message)
@@ -122,12 +144,14 @@ def launch_pages_internals(port, route_message_html, route_message, pageamt, htm
     # 40
     if htmlpageamt > 30:
         if htmlpageamt <= 40:
+            html_1(app, route_message_html)
             html_10(app, route_message_html)
             html_20(app, route_message_html)
             html_30(app, route_message_html)
             html_40(app, route_message_html)
     if pageamt > 30:
         if pageamt <= 40:
+            string_1(app, route_message)
             string_10(app, route_message)
             string_20(app, route_message)
             string_30(app, route_message)
@@ -136,6 +160,7 @@ def launch_pages_internals(port, route_message_html, route_message, pageamt, htm
     # 50
     if htmlpageamt > 40:
         if htmlpageamt <= 50:
+            html_1(app, route_message_html)
             html_10(app, route_message_html)
             html_20(app, route_message_html)
             html_30(app, route_message_html)
@@ -143,6 +168,7 @@ def launch_pages_internals(port, route_message_html, route_message, pageamt, htm
             html_50(app, route_message_html)
     if pageamt > 40:
         if pageamt <= 50:
+            string_1(app, route_message)
             string_10(app, route_message)
             string_20(app, route_message)
             string_30(app, route_message)
@@ -157,6 +183,7 @@ def launch_pages_internals(port, route_message_html, route_message, pageamt, htm
         html_40(app, route_message_html)
         html_50(app, route_message_html)
     if pageamt >= 51:
+        string_1(app, route_message)
         string_10(app, route_message)
         string_20(app, route_message)
         string_30(app, route_message)

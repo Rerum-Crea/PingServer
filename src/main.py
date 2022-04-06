@@ -11,7 +11,6 @@ import PingServer
 
 
 # Sets up a page that serves an HTML file on the '/' branch.
-PingServer.create_page('/lol123', "indexlol")
 PingServer.create_page('/', "index")
 PingServer.create_page('/lol', "indexlol")
 PingServer.create_page('/lol1', "indexlol1")
