@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c9a54268-370c-4f47-b373-494107f33fae" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../dist/PingServer-0.0.26-py3-none-any.whl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dist/PingServer-0.0.26.tar.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PingServer.egg-info/PKG-INFO" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PingServer.egg-info/SOURCES.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PingServer.egg-info/dependency_links.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PingServer.egg-info/top_level.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/../setup.py" afterDir="false" />
-    </list>
+    <list default="true" id="c9a54268-370c-4f47-b373-494107f33fae" name="Changes" comment="Small Changes Currently cant find a way to solve." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -67,6 +66,14 @@
       <option name="presentableId" value="Default" />
       <updated>1649214036729</updated>
     </task>
+    <task id="LOCAL-00001" summary="Small Changes Currently cant find a way to solve.">
+      <created>1649221706219</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1649221706219</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -82,5 +89,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Small Changes Currently cant find a way to solve." />
+    <option name="LAST_COMMIT_MESSAGE" value="Small Changes Currently cant find a way to solve." />
   </component>
 </project>
