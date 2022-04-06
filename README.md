@@ -1,4 +1,5 @@
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FNecrownyx%2FPingServer&count_bg=%2300AEFF&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Current+Views&edge_flat=true)](https://hits.seeyoufarm.com)
+[
+![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FNecrownyx%2FPingServer&count_bg=%2300AEFF&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Current+Views&edge_flat=true)](https://hits.seeyoufarm.com)
 
 # PingServer
 
@@ -33,23 +34,13 @@ This module of the package can also take a custom message for example:
 Will output "hello, world!" on the webpage.
 
 ## How to serve multiple pages.
-If you want to serve multiple different pages first run:
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`PingServer.initialize(amt)` 
-
-with `amt` being the number of web pages to be created. 
-
-Then to create the page use either:
+If you want to serve multiple different pages first create the page use either:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`PingServer.create_page(route, message)`
 
-with `route` being the route of the site for example: `'/'`  and `message` being the message to be served to users.
+with `route` being the route of the site for example: `'/'`  and `message` being the message to be served to users or a html file name for example `index.html` this file must be in the templates directory of your project.
 
-Or to serve a html file to the user you can use:
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`PingServer.create_page_html(route, htmlpath)`
-
-with `route` being the route of the site for example: `'/'`  and `htmlpath` being the name of the HTML file in the templates directory of your project.
+You can loop through this as many times as you want.
 
 Then when you have defined all of the pages for your site run:
 
@@ -57,7 +48,7 @@ Then when you have defined all of the pages for your site run:
 
 To run all the sites on a thread or:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`PingServer.launch_pages_internals()`
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`PingServer.launch_pages_nothread()`
 
 To run the sites on the main thread.
 

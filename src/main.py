@@ -11,7 +11,16 @@ import PingServer
 
 
 # Sets up a page that serves an HTML file on the '/' branch.
-PingServer.start('/', "index.html")
+PingServer.create_page('/', "index.html")
+PingServer.create_page('/', "index.html")
+PingServer.create_page('/', "index.html")
+PingServer.create_page('/', "index.html")
+PingServer.create_page('/', "index.html")
+PingServer.create_page('/', "index.html")
+
+PingServer.launch_pages_nothread()
+
+
 
 
 # Sets up a page that serves a string on the '/default' branch.
@@ -19,7 +28,6 @@ PingServer.start('/', "index.html")
 
 
 # Launches all the pages set up above on a separate thread of code.
-PingServer.launch_pages().start()
 
 
 # Prints something to prove that it is on a different branch
