@@ -12,7 +12,7 @@ PingServer.initialize(10)
 
 
 # Sets up a page that serves an HTML file on the '/' branch.
-PingServer.create_page_html('/', "index.html")
+PingServer.create_page('/', "index.html")
 
 
 # Sets up a page that serves a string on the '/default' branch.
@@ -20,7 +20,7 @@ PingServer.create_page('/default', ':)')
 
 
 # Launches all the pages set up above on a separate thread of code.
-PingServer.launch_pages().setDaemon(True).start()
+PingServer.launch_pages().start()
 
 
 # Prints something to prove that it is on a different branch
