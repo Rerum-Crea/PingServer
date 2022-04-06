@@ -1,4 +1,4 @@
-from .launch_pages_internal import bcolors, create_page, launch_pages, launch_pages_nothread
+from .global_data_functions import bcolors, create_page, launch_pages, launch_pages_nothread
 
 
 def start(route="/", horm=':)', port=6969, amount=1):

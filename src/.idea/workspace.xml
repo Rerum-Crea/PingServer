@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c9a54268-370c-4f47-b373-494107f33fae" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../dist/PingServer-0.0.26-py3-none-any.whl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dist/PingServer-0.0.26.tar.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PingServer.egg-info/PKG-INFO" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PingServer.egg-info/SOURCES.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PingServer.egg-info/dependency_links.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PingServer.egg-info/top_level.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/../setup.py" afterDir="false" />
-    </list>
+    <list default="true" id="c9a54268-370c-4f47-b373-494107f33fae" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
