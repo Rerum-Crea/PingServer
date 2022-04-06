@@ -1,11 +1,11 @@
 from .launch_pages_internal import bcolors, create_page, launch_pages, launch_pages_nothread
 
 
-def start(route="/", message=':)', port=6969, amount=1):
+def start(route="/", horm=':)', port=6969, amount=1):
     import random
     if port == 6969:
         port = random.randint(2000, 9000)
-    create_page(route, message)
+    create_page(route, horm)
     launch_pages_nothread(port)
 
 
