@@ -1,6 +1,6 @@
-<p style="text-align: center;">
-  [![GitHub issues](https://img.shields.io/github/issues/Necrownyx/PingServer)](https://github.com/Necrownyx/PingServer/issues) [![GitHub forks](https://img.shields.io/github/forks/Necrownyx/PingServer)](https://github.com/Necrownyx/PingServer/network) [![GitHub stars](https://img.shields.io/github/stars/Necrownyx/PingServer)](https://github.com/Necrownyx/PingServer/stargazers) [![GitHub license](https://img.shields.io/github/license/Necrownyx/PingServer)](https://github.com/Necrownyx/PingServer/blob/main/LICENSE) [![Python](https://img.shields.io/badge/Made%20with-Python-%2300AEFF)](https://python.org) [![Python](https://img.shields.io/badge/Available%20on-PyPi-%2300AEFF)](https://pypi.org/project/PingServer/)
-</p>
+
+### [![GitHub issues](https://img.shields.io/github/issues/Necrownyx/PingServer)](https://github.com/Necrownyx/PingServer/issues) [![GitHub forks](https://img.shields.io/github/forks/Necrownyx/PingServer)](https://github.com/Necrownyx/PingServer/network) [![GitHub stars](https://img.shields.io/github/stars/Necrownyx/PingServer)](https://github.com/Necrownyx/PingServer/stargazers) [![GitHub license](https://img.shields.io/github/license/Necrownyx/PingServer)](https://github.com/Necrownyx/PingServer/blob/main/LICENSE) [![Python](https://img.shields.io/badge/Made%20with-Python-%2300AEFF)](https://python.org) [![Python](https://img.shields.io/badge/Available%20on-PyPi-%2300AEFF)](https://pypi.org/project/PingServer/)
+
 <pre align="center">
 ██████╗ ██╗███╗   ██╗ ██████╗     ███████╗███████╗██████╗ ██╗   ██╗███████╗██████╗ 
 ██╔══██╗██║████╗  ██║██╔════╝     ██╔════╝██╔════╝██╔══██╗██║   ██║██╔════╝██╔══██╗
