@@ -11,7 +11,12 @@ import PingServer
 
 
 # Sets up a page that serves an HTML file on the '/' branch.
+PingServer.create_page('/lol123', "indexlol")
 PingServer.create_page('/', "index")
+PingServer.create_page('/lol', "indexlol")
+PingServer.create_page('/lol1', "indexlol1")
+PingServer.create_page('/lol2', "indexlol2")
+PingServer.create_page('/lol3', "indexlol3")
 
 
 # Sets up a page that serves a string on the '/default' branch.

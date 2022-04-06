@@ -11,7 +11,8 @@ class bcolors:
 
 
 def create_page(route='/', horm=':)'):
-
+    global htmlpagenum
+    global pagenum
     try:
         if not done:
             initialize(True)
@@ -81,7 +82,7 @@ def launch_pages_internals(port, route_message_html, route_message, pageamt, htm
         port = random.randint(2000, 9000)
 
     app = Flask('app')
-
+    print(htmlpageamt, '&', pageamt)
     # 1
     if htmlpageamt <= 1:
         html_1(app, route_message_html)
