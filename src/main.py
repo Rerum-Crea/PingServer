@@ -8,15 +8,18 @@ import PingServer
 
 
 # Initialize the servers for the branches of the app.
-PingServer.initialize(10)
 
 
 # Sets up a page that serves an HTML file on the '/' branch.
-PingServer.create_page('/', "index.html")
+PingServer.create_page('/', "index")
+PingServer.create_page('/lol', "indexlol")
+PingServer.create_page('/lol1', "indexlol1")
+PingServer.create_page('/lol2', "indexlol2")
+PingServer.create_page('/lol3', "indexlol3")
 
 
 # Sets up a page that serves a string on the '/default' branch.
-PingServer.create_page('/default', ':)')
+# PingServer.create_page('/default', ':)')
 
 
 # Launches all the pages set up above on a separate thread of code.
@@ -24,7 +27,6 @@ PingServer.launch_pages().start()
 
 
 # Prints something to prove that it is on a different branch
-print("It's on a different branch!!!")
 
 
 # Notice how this code runs extremely fast this is because the servers are only loaded when you run the launch_pages() function.
