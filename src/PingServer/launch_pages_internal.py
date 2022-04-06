@@ -11,114 +11,66 @@ class bcolors:
 
 
 def create_page(route='/', horm=':)'):
+
+    try:
+        if not done:
+            initialize(True)
+    except NameError:
+        initialize(True)
+    htmlpagenum = initialize(True)
+    pagenum = initialize(False)
     if ".html" in horm:
-        initialize_internals(0, True, True)
-        if htmlpagenum >= 0:
+        if htmlpagenum <= 50:
             route_message_html[htmlpagenum]["route"] = route
             route_message_html[htmlpagenum]["html-path"] = horm
+            htmlpagenum += 1
         else:
             print(f"{bcolors.WARNING}No HTML Pages Left to use :(")
     else:
-        initialize_internals(0, True, False)
-        if pagenum >= 0:
+        if pagenum <= 50:
             route_message[pagenum]["route"] = route
             route_message[pagenum]["message"] = horm
+            pagenum += 1
         else:
             print(f"{bcolors.WARNING}No Pages Left to use :(")
 
 
 def launch_pages(port=6969, daemon=False):
     from threading import Thread
-    thread_data = Thread(target=launch_pages_internals, args=(port, route_message_html, route_message, pageamt, htmlpageamt), daemon=daemon)
+    thread_data = Thread(target=launch_pages_internals, args=(port, route_message_html, route_message, pagenum, htmlpagenum), daemon=daemon)
     return thread_data
 
 
 def launch_pages_nothread(port=6969):
-    launch_pages_internals(port, route_message_html, route_message, pageamt, htmlpageamt)
+    launch_pages_internals(port, route_message_html, route_message, pagenum, htmlpagenum)
 
 
-def initialize(amt=10, htmltype=True, stringtype=True, divide=False):
-    if htmltype:
-        if not stringtype:
-            initialize_internals(amt, False, html=True)
+def initialize(html):
+    global route_message_html
+    global route_message
+    global pagenum
+    global htmlpagenum
+    global done
+    try:
+        done + 1
+    except NameError:
+        pagenum = 0
+        htmlpagenum = 0
+        route_message_html = {}
+        route_message = {}
+        for i in range(50):
+            route_message_html[i] = {}
+            route_message[i] = {}
+            route_message_html[i]['route'] = '/PingServerIsTheBestForThingsLikeLongURLSJK'
+            route_message[i]['route'] = '/PingServerIsTheBestForThingsLikeLongURLSJK'
+            route_message_html[i]['message'] = ':('
+            route_message[i]['html-path'] = 'If you use the default for html your bad'
+        done = True
+    if done is True:
+        if html is True:
+            return htmlpagenum
         else:
-            if not divide:
-                initialize_internals(amt, False, html=False)
-                initialize_internals(amt, False, html=True)
-            else:
-                initialize_internals(round(amt / 2), False, html=False)
-                initialize_internals(round(amt / 2), False, html=True)
-    elif stringtype:
-        initialize_internals(amt, False, html=False)
-    else:
-        return 'You need to have at least one of the options true.'
-
-
-def initialize_internals(amt=10, done=False, html=False):
-    if not done:
-        global route_message_html
-        global route_message
-        global pagenum
-        global htmlpagenum
-        global pageamt
-        global htmlpageamt
-        if amt <= 1:
-            amt = 1
-        if amt > 1:
-            if amt <= 10:
-                amt = 10
-        if amt > 10:
-            if amt <= 20:
-                amt = 20
-        if amt > 20:
-            if amt <= 30:
-                amt = 30
-        if amt > 30:
-            if amt <= 40:
-                amt = 40
-        if amt > 40:
-            if amt <= 50:
-                amt = 50
-        if amt >= 51:
-            amt = 50
-        if not html:
-            pagenum = amt
-            pageamt = amt
-            route_message = {}
-            for i in range(amt):
-                route_message[i] = {}
-                route_message[i]["route"] = '/Pingserver_initialize_page_default'
-                route_message[i]["message"] = "No text channels You find yourself in a strange place. You don't have " \
-                                              "access to any text channels, or there are none on this server. There " \
-                                              "is nothing there, Everyone still have the server but cant just see it. "
-            done = True
-            return True
-        else:
-            htmlpagenum = amt
-            htmlpageamt = amt
-            route_message_html = {}
-            for i in range(amt):
-                route_message_html[i] = {}
-                route_message_html[i]["route"] = '/Pingserver_initialize_page_default'
-                route_message_html[i]["html-path"] = "No text channels You find yourself in a strange place. You don't " \
-                                                     "have access to any text channels, or there are none on this " \
-                                                     "server. There is nothing there, Everyone still have the server " \
-                                                     "but cant just see it. "
-            done = True
-            return True
-    else:
-        try:
-            if not html:
-                pagenum -= 1
-                return True
-            else:
-                htmlpagenum -= 1
-                return False
-        except NameError:
-            print(f"{bcolors.FAIL}##############################################")
-            print(f"{bcolors.FAIL}You need to run PingServer.initialize() first.")
-            print(f"{bcolors.FAIL}##############################################")
-            return "Run PingServer.initialize()"
+            return pagenum
 
 
 def launch_pages_internals(port, route_message_html, route_message, pageamt, htmlpageamt):
