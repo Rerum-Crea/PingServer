@@ -27,10 +27,14 @@ def create_page(route='/', horm=':)'):
             print(f"{bcolors.WARNING}No Pages Left to use :(")
 
 
-def launch_pages(daemon=False):
+def launch_pages(port=6969, daemon=False):
     from threading import Thread
-    thread_data = Thread(target=launch_pages_internals, args=(route_message_html, route_message, pageamt, htmlpageamt), daemon=daemon)
+    thread_data = Thread(target=launch_pages_internals, args=(port, route_message_html, route_message, pageamt, htmlpageamt), daemon=daemon)
     return thread_data
+
+
+def launch_pages_nothread(port=6969):
+    launch_pages_internals(port, route_message_html, route_message, pageamt, htmlpageamt)
 
 
 def initialize(amt=10, htmltype=True, stringtype=True, divide=False):
@@ -51,7 +55,6 @@ def initialize(amt=10, htmltype=True, stringtype=True, divide=False):
 
 
 def initialize_internals(amt=10, done=False, html=False):
-    from .__init__ import bcolors
     if not done:
         global route_message_html
         global route_message
@@ -59,6 +62,25 @@ def initialize_internals(amt=10, done=False, html=False):
         global htmlpagenum
         global pageamt
         global htmlpageamt
+        if amt <= 1:
+            amt = 1
+        if amt > 1:
+            if amt <= 10:
+                amt = 10
+        if amt > 10:
+            if amt <= 20:
+                amt = 20
+        if amt > 20:
+            if amt <= 30:
+                amt = 30
+        if amt > 30:
+            if amt <= 40:
+                amt = 40
+        if amt > 40:
+            if amt <= 50:
+                amt = 50
+        if amt >= 51:
+            amt = 50
         if not html:
             pagenum = amt
             pageamt = amt
@@ -99,17 +121,28 @@ def initialize_internals(amt=10, done=False, html=False):
             return "Run PingServer.initialize()"
 
 
-def launch_pages_internals(route_message_html, route_message, pageamt, htmlpageamt):
+def launch_pages_internals(port, route_message_html, route_message, pageamt, htmlpageamt):
     from flask import Flask
     import random
 
+    if port == 6969:
+        port = random.randint(2000, 9000)
+
     app = Flask('app')
 
+    # 1
+    if htmlpageamt <= 1:
+        html_1(app, route_message_html)
+    if pageamt <= 1:
+        string_1(app, route_message)
+
     # 10
-    if htmlpageamt <= 10:
-        html_10(app, route_message_html)
-    if pageamt <= 10:
-        string_10(app, route_message)
+    if htmlpageamt > 1:
+        if htmlpageamt <= 10:
+            html_10(app, route_message_html)
+    if pageamt > 1:
+        if pageamt <= 10:
+            string_10(app, route_message)
 
     # 20
     if htmlpageamt > 10:
@@ -177,14 +210,16 @@ def launch_pages_internals(route_message_html, route_message, pageamt, htmlpagea
         string_40(app, route_message)
         string_50(app, route_message)
 
-    app.run(host='0.0.0.0', port=random.randint(2000, 9000))
+    app.run(host='0.0.0.0', port=port)
 
 
-def string_10(app, route_message):
+def string_1(app, route_message):
     @app.route(route_message[0]['route'])
     def Server_0():
         return route_message[0]['message']
 
+
+def string_10(app, route_message):
     @app.route(route_message[1]['route'])
     def Server_1():
         return route_message[1]['message']
@@ -390,12 +425,16 @@ def string_50(app, route_message):
         return route_message[49]['message']
 
 
-def html_10(app, route_message_html):
+def html_1(app, route_message_html):
     from flask import render_template
 
     @app.route(route_message_html[0]['route'])
     def Server_50():
         return render_template(route_message_html[0]['html-path'])
+
+
+def html_10(app, route_message_html):
+    from flask import render_template
 
     @app.route(route_message_html[1]['route'])
     def Server_51():

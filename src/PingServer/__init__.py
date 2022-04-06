@@ -1,17 +1,13 @@
-from .launch_pages_internal import bcolors, create_page, launch_pages, initialize
+from .launch_pages_internal import bcolors, create_page, launch_pages, initialize, launch_pages_nothread
 
 
-def start(message=":)", route='/'):
-    from flask import Flask
+def start(route="/", message=':)', port=6969, amount=1):
     import random
-
-    app = Flask('app')
-
-    @app.route(route)
-    def server():
-        return message
-
-    app.run(host='0.0.0.0', port=random.randint(2000, 9000))
+    if port == 6969:
+        port = random.randint(2000, 9000)
+    initialize(amount, htmltype=1, stringtype=1)
+    create_page(route, message)
+    launch_pages_nothread(port)
 
 
 def thread(message=":)", route='/', daemon=False):
