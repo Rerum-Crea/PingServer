@@ -1,6 +1,8 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [![GitHub issues](https://img.shields.io/github/issues/Necrownyx/PingServer)](https://github.com/Necrownyx/PingServer/issues) [![GitHub forks](https://img.shields.io/github/forks/Necrownyx/PingServer)](https://github.com/Necrownyx/PingServer/network) [![GitHub stars](https://img.shields.io/github/stars/Necrownyx/PingServer)](https://github.com/Necrownyx/PingServer/stargazers) [![GitHub license](https://img.shields.io/github/license/Necrownyx/PingServer)](https://github.com/Necrownyx/PingServer/blob/main/LICENSE) [![Python](https://img.shields.io/badge/Made%20with-Python-%2300AEFF)](https://python.org) [![Python](https://img.shields.io/badge/Available%20on-PyPi-%2300AEFF)](https://pypi.org/project/PingServer/) [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FNecrownyx%2FPingServer&count_bg=%2300AEFF&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If you like the package please can you star the github.
+
 
 <pre align="center">██████╗ ██╗███╗   ██╗ ██████╗     ███████╗███████╗██████╗ ██╗   ██╗███████╗██████╗ 
 ██╔══██╗██║████╗  ██║██╔════╝     ██╔════╝██╔════╝██╔══██╗██║   ██║██╔════╝██╔══██╗
