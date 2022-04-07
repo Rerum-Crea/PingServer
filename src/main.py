@@ -3,26 +3,14 @@
 # package and sometimes there are bugs with the code and this is the current most stable version at the time of
 # writing this. Documentation at https://pypi.org/project/PingServer/
 
-
+from time import time
 import PingServer
 
 
-# Initialize the servers for the branches of the app.
+def func():
+    return str(time())
 
 
-# Sets up a page that serves an HTML file on the '/' branch.
-PingServer.thread().start()
+PingServer.start('/', str(time()))
+PingServer.launch_pages().start()
 
-
-
-# Sets up a page that serves a string on the '/default' branch.
-# PingServer.create_page('/default', ':)')
-
-
-# Launches all the pages set up above on a separate thread of code.
-
-
-# Prints something to prove that it is on a different branch
-
-
-# Notice how this code runs extremely fast this is because the servers are only loaded when you run the launch_pages() function.
