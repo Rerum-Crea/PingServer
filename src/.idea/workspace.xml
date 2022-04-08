@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c9a54268-370c-4f47-b373-494107f33fae" name="Changes" comment="Small Changes Currently cant find a way to solve.">
-      <change beforePath="$PROJECT_DIR$/PingServer/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/PingServer/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingServer/launch_pages_internal.py" beforeDir="false" afterPath="$PROJECT_DIR$/PingServer/launch_pages_internal.py" afterDir="false" />
-    </list>
+    <list default="true" id="c9a54268-370c-4f47-b373-494107f33fae" name="Changes" comment="Small Changes to optimise code for 1.0.0" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,7 +73,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649221706219</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Small Changes to optimise code for 1.0.0">
+      <created>1649376766941</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1649376766941</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -93,6 +97,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Small Changes Currently cant find a way to solve." />
-    <option name="LAST_COMMIT_MESSAGE" value="Small Changes Currently cant find a way to solve." />
+    <MESSAGE value="Small Changes to optimise code for 1.0.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="Small Changes to optimise code for 1.0.0" />
   </component>
 </project>
