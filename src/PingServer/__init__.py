@@ -1,5 +1,4 @@
 from .launch_pages_internal import bcolors, create_page, launch_pages, launch_pages_nothread
-import flask
 
 
 def start(route="/", horm=':)', port=6969):
