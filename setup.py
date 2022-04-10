@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="PingServer",
-    version="1.0.0",
+    version="1.0.1",
     author="Isaac",
     author_email="necrownyx@outlook.com",
     description="Makes creating a server to be pinged easier",
@@ -22,7 +22,6 @@ setuptools.setup(
     ],
     install_requires=[
         'flask',
-        'time',
     ],
     package_dir={"": "src"},
     packages=setuptools.find_packages(where="src"),
