@@ -22,6 +22,7 @@ setuptools.setup(
     ],
     install_requires=[
         'flask',
+        'PingServer==1.0.1,
     ],
     package_dir={"": "src"},
     packages=setuptools.find_packages(where="src"),
